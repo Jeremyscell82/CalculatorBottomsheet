@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_margin"
+    android:padding="@dimen/default_padding"
+    app:cardCornerRadius="@dimen/default_corners"
+    app:cardElevation="@dimen/default_elevation"
+    style="@style/make_clickable">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/item_calc_formula"
+            style="@style/font_floor_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_double_margin"
+            android:fontFamily="sans-serif-light"
+            android:gravity="right|bottom"
+            android:maxLines="1"
+            android:text="100x100"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_calc_result"
+            style="@style/font_floor_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_vertical|right"
+            android:maxLines="1"
+            android:padding="@dimen/default_margin"
+            android:text="1000"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@id/item_calc_formula"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

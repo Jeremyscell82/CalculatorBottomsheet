@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calculator Demo</string>
+
+    <!-- Calculator -->
+    <string name="calc_clear">Clear History</string>
+    <string name="calc_copy">Copy &#32;</string>
+    <string name="calc_value_copied">value copied</string>
+    <string name="calc_close">CLOSE</string>
+</resources>
