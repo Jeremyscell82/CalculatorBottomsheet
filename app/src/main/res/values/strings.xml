@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">Calculator Demo</string>
+    <string name="app_name">Calc Demo</string>
 
     <!-- Calculator -->
     <string name="calc_clear">Clear History</string>
     <string name="calc_copy">Copy &#32;</string>
     <string name="calc_value_copied">value copied</string>
     <string name="calc_close">CLOSE</string>
+
+    <string name="hello_message">Hello!\n\n\tThis application is nothing more than a spike to demonstrate my custom made bottomsheet calculator.\n\n\tAND I DECIDED TO MAKE IT OPENSOURCE</string>
+    <string name="code_message_link">Code is available on \ngithub.com/Jeremyscell82/CalculatorBottomsheet \n\tENJOY!</string>
 </resources>

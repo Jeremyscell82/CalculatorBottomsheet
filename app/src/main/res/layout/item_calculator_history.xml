@@ -15,7 +15,7 @@
 
         <TextView
             android:id="@+id/item_calc_formula"
-            style="@style/font_floor_title"
+            style="@style/font_floor_calc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_margin"
@@ -31,7 +31,7 @@
 
         <TextView
             android:id="@+id/item_calc_result"
-            style="@style/font_floor_title"
+            style="@style/font_floor_calc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"

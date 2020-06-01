@@ -1,13 +1,16 @@
 package com.jl_demo.calculatorbottomsheet
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.jl_demo.calculatorbottomsheet.calculator.CalculatorBottomSheet
 import com.jl_demo.calculatorbottomsheet.database.CoreDatabase
 import com.jl_demo.calculatorbottomsheet.database.DatabaseConstants
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,5 +35,15 @@ class MainActivity : AppCompatActivity() {
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }
 
+        source_code_link.setOnClickListener {
+            loadSourceCode()
+        }
+    }
+
+    private fun loadSourceCode(){
+        val url = "https://github.com/Jeremyscell82/CalculatorBottomsheet"
+        val i = Intent(Intent.ACTION_VIEW)
+        i.data = Uri.parse(url)
+        startActivity(i)
     }
 }
