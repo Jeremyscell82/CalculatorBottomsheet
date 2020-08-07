@@ -6,12 +6,13 @@ import com.jl_demo.calculatorbottomsheet.MainActivity
 import com.jl_demo.calculatorbottomsheet.R
 import com.jl_demo.calculatorbottomsheet.database.CalcHistoryModel
 import com.jl_demo.calculatorbottomsheet.database.DB_Controller
+import timber.log.Timber
 
 /**
  * This is the front facing class, the wrapper, the controller for the calculator.
  * All functions triggered by the UI are here
  */
-class CalculatorImpl(val formulaView: TextView, val numberView: TextView, val context: Context) {
+class CalculatorImpl(val formulaView: TextView, val operatorView: TextView, val numberView: TextView, val context: Context) {
     var displayedNumber: String? = null
     var displayedFormula: String? = null
     var lastKey: String? = null
@@ -56,11 +57,16 @@ class CalculatorImpl(val formulaView: TextView, val numberView: TextView, val co
         displayedFormula = value
     }
 
+    private fun setOperator(value: String){
+        operatorView.text = value
+    }
+
     private fun updateFormula() {
         val first = Formatter.doubleToString(mBaseValue)
         val second = Formatter.doubleToString(mSecondValue)
         val sign = getSign(mLastOperation)
 
+        Timber.d("JL_ Sign function is $sign")
         if (sign == "√") {
             setFormula(sign + first)
         } else if (sign == "!") {
@@ -140,6 +146,8 @@ class CalculatorImpl(val formulaView: TextView, val numberView: TextView, val co
         mResetValue = true
         lastKey = operation
         mLastOperation = operation
+        setOperator(getSign(operation))
+
 
         if (operation == ROOT) {
             handleRoot()
@@ -176,6 +184,7 @@ class CalculatorImpl(val formulaView: TextView, val numberView: TextView, val co
         resetValues()
         setValue("0")
         setFormula("")
+        setOperator("")
     }
 
     fun handleEquals() {
@@ -188,6 +197,7 @@ class CalculatorImpl(val formulaView: TextView, val numberView: TextView, val co
         mSecondValue = getDisplayedNumberAsDouble()
         calculateResult()
         lastKey = EQUALS
+        setOperator("")
     }
 
     private fun decimalClicked() {

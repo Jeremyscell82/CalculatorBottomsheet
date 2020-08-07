@@ -101,6 +101,21 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
+            android:id="@+id/calc_result_sign"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textSize="30sp"
+            android:textColor="@color/textColorPrimary"
+            tools:text="*"
+            app:layout_constraintTop_toBottomOf="@id/calc_formula"
+            app:layout_constraintStart_toEndOf="@id/calc_result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/calc_result"/>
+
+        <TextView
             android:id="@+id/calc_copy"
             style="@style/font_floor_calc"
             android:layout_width="wrap_content"

@@ -59,6 +59,7 @@ class CalculatorBottomSheet : BottomSheetDialogFragment() {
         calc = CalculatorImpl(
             formulaView = calc_formula,
             numberView = calc_result,
+            operatorView = calc_result_sign,
             context = view.context
         )
         view.apply {
