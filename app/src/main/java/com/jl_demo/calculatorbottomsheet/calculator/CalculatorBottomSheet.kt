@@ -12,14 +12,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.jl_demo.calculatorbottomsheet.MainActivity
 import com.jl_demo.calculatorbottomsheet.R
-import com.jl_demo.calculatorbottomsheet.calculator.helpers.CalculatorImpl
 import com.jl_demo.calculatorbottomsheet.calculator.helpers.*
 import com.jl_demo.calculatorbottomsheet.database.DB_Controller
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -34,7 +33,7 @@ import timber.log.Timber
  * This class should not need to be modified
  */
 //Todo needs to resized to fit a 16:10 screen ratio
-class CalculatorBottomSheet : BottomSheetDialogFragment() {
+class CalculatorBottomSheet : DialogFragment() {
 
     lateinit var calc: CalculatorImpl
     lateinit var calcAdapter: CalculatorAdapter
@@ -48,9 +47,13 @@ class CalculatorBottomSheet : BottomSheetDialogFragment() {
     ): View? {
         calcAdapter = CalculatorAdapter()
         calculatorViewModel = ViewModelProvider(this).get(CalculatorViewModel::class.java)
+        isCancelable = false
         return inflater.inflate(R.layout.fragment_calculator, container, false)
     }
 
+    override fun getTheme(): Int {
+        return R.style.DialogTheme
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
